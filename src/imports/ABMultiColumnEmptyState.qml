@@ -67,12 +67,12 @@ Page {
         asynchronous: true
         Component.onCompleted: setSource(Qt.resolvedUrl("ABNewContactBottomEdge.qml"),
                                          {"hintVisible": false,
-                                          "visible": Qt.binding(function () {return mainPage.pageStack.columns > 1}),
+                                          "visible": root.pageStack.columns > 1,
                                           "parent": root,
-                                          "height": Qt.binding(function () {return root.height}),
-                                          "modelToEdit": Qt.binding(function () {return root.model}),
-                                          "hint.flickable": Qt.binding(function () {return root.flickable}),
-                                          "pageStack": Qt.binding(function () {return root.pageStack})
+                                          "height": root.height,
+                                          "modelToEdit": root.model,
+                                          "hint.flickable": root.flickable,
+                                          "pageStack": root.pageStack
                                          })
 
         Connections {
