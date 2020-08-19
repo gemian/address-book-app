@@ -120,13 +120,13 @@ ContactViewPage {
         asynchronous: true
         Component.onCompleted: setSource(Qt.resolvedUrl("ABNewContactBottomEdge.qml"),
                                          {"parent": root,
-                                          "height": Qt.binding(function () {return root.height}),
-                                          "modelToEdit": Qt.binding(function () {return root.model}),
-                                          "hint.flickable": Qt.binding(function () {return root.flickable}),
-                                          "pageStack": Qt.binding(function () {return root.pageStack}),
+                                          "height": root.height,
+                                          "modelToEdit": root.model,
+                                          "hint.flickable": root.flickable,
+                                          "pageStack": root.pageStack,
                                           "hintVisible": false,
-                                          "enabled": Qt.binding(function () {return !root.editing}),
-                                          "visible": Qt.binding(function () {return root.pageStack.columns > 1})
+                                          "enabled": !root.editing,
+                                          "visible": root.pageStack.columns > 1
                                          })
     }
 

@@ -89,14 +89,12 @@ BottomEdge {
 
     function setContactEditorPageProperties(contactEditorPage) {
         if (contactEditorPage) {
-            contactEditorPage.implicitHeight = Qt.binding(function () {return mainWindow.height;});
-            contactEditorPage.implicitWidth = Qt.binding(function () {
-                return contactEditorPage.parent ? contactEditorPage.parent.width
-                                                : bottomEdge.width;
+            contactEditorPage.implicitHeight = contactEditorPage.height;
+            contactEditorPage.implicitWidth = contactEditorPage.parent ? contactEditorPage.parent.width : bottomEdge.width;
             });
             contactEditorPage.enabled = false;
-            contactEditorPage.model = Qt.binding(function () {return bottomEdge.modelToEdit;});
-            contactEditorPage.pageStack = Qt.binding(function () {return bottomEdge.pageStack;});
+            contactEditorPage.model = bottomEdge.modelToEdit;
+            contactEditorPage.pageStack = bottomEdge.pageStack;
         }
     }
 }
