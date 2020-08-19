@@ -91,7 +91,6 @@ BottomEdge {
         if (contactEditorPage) {
             contactEditorPage.implicitHeight = contactEditorPage.height;
             contactEditorPage.implicitWidth = contactEditorPage.parent ? contactEditorPage.parent.width : bottomEdge.width;
-            });
             contactEditorPage.enabled = false;
             contactEditorPage.model = bottomEdge.modelToEdit;
             contactEditorPage.pageStack = bottomEdge.pageStack;
