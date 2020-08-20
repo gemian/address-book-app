@@ -180,11 +180,10 @@ ContactDetailBase {
         onFieldSelected: {
             if (qmlTypeName=="Birthday") {
                 newBirthdayRequested = true
-                input.text = Qt.binding(function() { return Qt.formatDate(root.date)})
+                input.text = Qt.formatDate(root.date)
                 selectDate()
             }
         }
     }
 
 }
-
