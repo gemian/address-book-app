@@ -285,9 +285,6 @@ Page {
         onTriggered: mainPage.fetchContact()
     }
 
-    title: i18n.tr("Contacts")
-    flickable: null
-
     ContactsUI.ContactListView {
         id: contactList
         objectName: "contactListView"
