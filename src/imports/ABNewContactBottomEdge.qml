@@ -92,7 +92,8 @@ BottomEdge {
         if (contactEditorPage) {
             contactEditorPage.implicitHeight = Qt.binding(function () {return contactEditorPage.height;});
             contactEditorPage.implicitWidth = Qt.binding(function () {
-                return contactEditorPage.parent ? contactEditorPage.parent.width : bottomEdge.width;
+                return contactEditorPage.parent ? contactEditorPage.parent.width
+                                                : bottomEdge.width;
             });
             contactEditorPage.enabled = false;
             contactEditorPage.model = Qt.binding(function () {return bottomEdge.modelToEdit;});
