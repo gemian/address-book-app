@@ -836,7 +836,7 @@ Page {
         Component.onCompleted: {
             if (mainPage._bottomEdgeEnabled) {
                 setSource(Qt.resolvedUrl("ABNewContactBottomEdge.qml"),
-                                         {"parent": Qt.binding(function () {return mainPage}),
+                                         {"parent": mainPage,
                                           "modelToEdit": Qt.binding(function () {return mainPage.contactModel}),
                                           "hint.flickable": Qt.binding(function () {return contactList.view}),
                                           "pageStack": Qt.binding(function () {return mainPage.pageStack}),
