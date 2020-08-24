@@ -24,7 +24,7 @@ BottomEdge {
 
     property var modelToEdit: null
     property var pageStack: null
-    property alias hintVisible: bottomEdgeHint.visible
+    property bool hintVisible: false
     property var _contactToEdit: null
 
     function editContact(contact)
@@ -61,6 +61,7 @@ BottomEdge {
 
     hint {
         id: bottomEdgeHint
+        visible: bottomEdge.hintVisible
         action: Action {
             iconName: "contact-new"
             enabled: bottomEdge.enabled
@@ -89,11 +90,13 @@ BottomEdge {
 
     function setContactEditorPageProperties(contactEditorPage) {
         if (contactEditorPage) {
-            contactEditorPage.implicitHeight = contactEditorPage.height;
-            contactEditorPage.implicitWidth = contactEditorPage.parent ? contactEditorPage.parent.width : bottomEdge.width;
+            contactEditorPage.implicitHeight = Qt.binding(function () {return contactEditorPage.height;});
+            contactEditorPage.implicitWidth = Qt.binding(function () {
+                return contactEditorPage.parent ? contactEditorPage.parent.width : bottomEdge.width;
+            });
             contactEditorPage.enabled = false;
-            contactEditorPage.model = bottomEdge.modelToEdit;
-            contactEditorPage.pageStack = bottomEdge.pageStack;
+            contactEditorPage.model = Qt.binding(function () {return bottomEdge.modelToEdit;});
+            contactEditorPage.pageStack = Qt.binding(function () {return bottomEdge.pageStack;});
         }
     }
 }

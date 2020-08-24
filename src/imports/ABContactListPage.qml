@@ -836,13 +836,13 @@ Page {
         Component.onCompleted: {
             if (mainPage._bottomEdgeEnabled) {
                 setSource(Qt.resolvedUrl("ABNewContactBottomEdge.qml"),
-                                         {"parent": mainPage,
-                                          "modelToEdit": mainPage.contactModel,
-                                          "hint.flickable": contactList.view,
-                                          "pageStack": mainPage.pageStack,
-                                          "enabled": mainPage.active,
-                                          "hintVisible": mainPage.pageStack.columns === 1,
-                                          "visible": mainPage.pageStack.columns === 1
+                                         {"parent": Qt.binding(function () {return mainPage}),
+                                          "modelToEdit": Qt.binding(function () {return mainPage.contactModel}),
+                                          "hint.flickable": Qt.binding(function () {return contactList.view}),
+                                          "pageStack": Qt.binding(function () {return mainPage.pageStack}),
+                                          "enabled": Qt.binding(function () {return mainPage.active}),
+                                          "hintVisible": Qt.binding(function () {return mainPage.pageStack.columns === 1}),
+                                          "visible": Qt.binding(function () {return mainPage.pageStack.columns === 1})
                                          })
             }
         }
