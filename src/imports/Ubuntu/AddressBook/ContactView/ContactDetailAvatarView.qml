@@ -26,6 +26,8 @@ ContactDetailBase {
     id: root
 
     property alias editable: favImage.enabled
+    // TODO: remove property once https://bugreports.qt.io/browse/QTBUG-87807 is fixed
+    property var constituents: []
 
     implicitHeight: units.gu(12)
     implicitWidth: parent.width
@@ -105,8 +107,11 @@ ContactDetailBase {
         }
 
         onClicked: {
-            root.contact.favorite.favorite = !root.contact.favorite.favorite
-            root.contact.save()
+            for (var i = 0; i < constituents.length; i++) {
+                var constituent = constituents[i]
+                constituent.favorite.favorite = !root.contact.favorite.favorite
+                constituent.save()
+            }
         }
     }
 }

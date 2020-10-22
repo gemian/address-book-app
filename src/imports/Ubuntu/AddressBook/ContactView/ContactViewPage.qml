@@ -25,6 +25,7 @@ Page {
     id: root
 
     property QtObject contact: null
+    property QtObject contactMainConstituent: null
     property string contactId
     property alias extensions: extensionsContents.children
     property alias model: contactFetch.model
@@ -123,6 +124,8 @@ Page {
                 anchors.left: parent.left
                 height: implicitHeight
                 width: implicitWidth
+
+                constituents: constituentsModel.contacts
             }
 
             ContactDetailPhoneNumbersView {
@@ -203,6 +206,39 @@ Page {
                     right: parent.right
                 }
                 height: childrenRect.height
+            }
+        }
+    }
+
+    /* TODO: once https://bugreports.qt.io/browse/QTBUG-87807 is fixed, we can
+     * remove both these models and use the new relatedContacts() method.
+     */
+    RelationshipModel {
+        id: relationshipModel
+        manager: root.model.manager
+        participant: root.contact
+        relationshipType: "Aggregates"
+        role: Relationship.First
+        onRelationshipsChanged: inspectModel()
+        function inspectModel() {
+            var ids = []
+            for (var i = 0; i < relationships.length; i++) {
+                ids.push(relationships[i].second)
+            }
+            idFilter.ids = ids
+        }
+    }
+
+    ContactModel {
+        id: constituentsModel
+        manager: root.model.manager
+        filter: IdFilter { id: idFilter }
+        onContactsChanged: inspectModel()
+        function inspectModel() {
+            for (var i = 0; i < contacts.length; i++) {
+                /* TODO: add support for the case when there are multiple
+                 * constituents */
+                root.contactMainConstituent = contacts[i]
             }
         }
     }
