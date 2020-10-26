@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: address-book-app\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-12 22:04+0000\n"
+"POT-Creation-Date: 2020-10-26 19:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "%1 is locked"
 msgstr ""
 
 #. TRANSLATORS: this refers to a new contact
-#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:480
+#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:488
 msgid "+ Create New"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../src/imports/Ubuntu/AddressBook/ContactEditor/ComboButtonAddField.qml:61
 #: ../src/imports/Ubuntu/AddressBook/ContactEditor/ContactDetailBirthdayEditor.qml:107
-#: ../src/imports/Ubuntu/AddressBook/ContactView/ContactDetailBirthdayView.qml:53
+#: ../src/imports/Ubuntu/AddressBook/ContactView/ContactDetailBirthdayView.qml:54
 msgid "Birthday"
 msgstr ""
 
@@ -221,16 +221,16 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:544
+#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:552
 #, qt-format
 msgid "Import contacts from %1"
 msgstr ""
 
-#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:556
+#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:564
 msgid "Import contacts from SIM card"
 msgstr ""
 
-#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:581
+#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:589
 msgid "Import contacts from vcard file"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:636
+#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:644
 #: ../src/imports/Ubuntu/Contacts/SIMCardImportPage.qml:252
 msgid "Loading..."
 msgstr ""
@@ -299,14 +299,8 @@ msgstr ""
 
 #: ../src/imports/Ubuntu/AddressBook/ContactEditor/ContactEditor.qml:142
 #: ../src/imports/Ubuntu/AddressBook/ContactEditor/ContactEditorPage.qml:207
-#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:488
+#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:496
 msgid "New contact"
-msgstr ""
-
-#. TRANSLATORS: This is the text that will be used on the "return" key for the virtual keyboard,
-#. this word must be less than 5 characters
-#: ../src/imports/Ubuntu/AddressBook/ContactEditor/TextInputDetail.qml:88
-msgid "Next"
 msgstr ""
 
 #: ../src/imports/Ubuntu/AddressBook/Base/RemoveContactsDialog.qml:40
@@ -457,7 +451,7 @@ msgstr ""
 msgid "Syncing"
 msgstr ""
 
-#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:636
+#: ../src/imports/Ubuntu/Contacts/ContactListView.qml:644
 msgid "Syncing..."
 msgstr ""
 

@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import Ubuntu.Components 1.3
-import Ubuntu.Keyboard 0.1
+// import Ubuntu.Keyboard 0.1
 import Ubuntu.Telephony.PhoneNumber 0.1
 
 //style
@@ -85,7 +85,7 @@ FocusScope {
         // Ubuntu.Keyboard
         // TRANSLATORS: This is the text that will be used on the "return" key for the virtual keyboard,
         // this word must be less than 5 characters
-        InputMethod.extensions: { "enterKeyText": i18n.dtr("address-book-app", "Next") }
+        // InputMethod.extensions: { "enterKeyText": i18n.dtr("address-book-app", "Next") }
         readOnly: root.detail ? root.detail.readOnly : true
         style: TextFieldStyle {
             overlaySpacing: 0

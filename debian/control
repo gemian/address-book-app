@@ -1,7 +1,7 @@
 Source: address-book-app
 Section: x11
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: Davide Guidi <davide@planetcom.co.uk>
 Build-Depends: cmake,
                dbus,
                debhelper (>= 9),
@@ -16,14 +16,10 @@ Build-Depends: cmake,
                qtdeclarative5-dev-tools,
                qtdeclarative5-gsettings1.0,
                qml-module-ofono,
-               qtdeclarative5-qtcontacts-plugin,
-               qtdeclarative5-ubuntu-content1,
                qtdeclarative5-ubuntu-history0.1,
-               qtdeclarative5-ubuntu-keyboard-extensions0.1,
                qtdeclarative5-buteo-syncfw0.1,
                qtdeclarative5-ubuntu-telephony-phonenumber0.1,
                qml-module-ubuntu-components,
-               qml-module-qt-labs-platform,
                qt5-default,
                qtbase5-dev,
                qtdeclarative5-dev,
@@ -41,35 +37,11 @@ Vcs-Bzr: https://code.launchpad.net/~phablet-team/address-book-app/trunk
 Vcs-Browser: http://bazaar.launchpad.net/~phablet-team/address-book-app/trunk/files
 X-Ubuntu-Use-Langpack: yes
 
-Package: address-book-app
-Architecture: any
-Depends: libqt5contacts5,
-         libqt5versit5,
-         ubuntu-ui-toolkit-theme (>= 0.1.49+14.10.20140707),
-         qmlscene,
-         qml-module-qtsysteminfo (>= 5.0~),
-         qtcontact5-galera,
-         qtdeclarative5-gsettings1.0,
-         qtdeclarative5-qtcontacts-plugin,
-         qtdeclarative5-qtquick2-plugin,
-         qml-module-ofono,
-         qtdeclarative5-ubuntu-addressbook0.1 (= ${binary:Version}),
-         qtdeclarative5-ubuntu-history0.1,
-         qtdeclarative5-ubuntu-keyboard-extensions0.1,
-         qtdeclarative5-ubuntu-telephony-phonenumber0.1 (>= 0.1+14.10.20140715.1),
-         ${misc:Depends},
-         ${shlibs:Depends},
-Description: Address Book application
- Address Book application to manager contacts.
-
 Package: qtdeclarative5-ubuntu-contacts0.1
 Architecture: any
-Depends: qtdeclarative5-accounts-plugin,
-         qtdeclarative5-online-accounts-client0.1,
-         qtdeclarative5-qtquick2-plugin,
+Depends: 
          qtdeclarative5-buteo-syncfw0.1,
          qml-module-ubuntu-components (>= 0.1.46+14.10.20140527) | qml-module-ubuntu-components-gles,
-         qtdeclarative5-qtcontacts-plugin,
          suru-icon-theme,
          ${misc:Depends},
          ${shlibs:Depends},
@@ -82,7 +54,6 @@ Description: Qt Ubuntu Contacts Components - QML plugin
 Package: qtdeclarative5-ubuntu-addressbook0.1
 Architecture: any
 Depends: qtdeclarative5-ubuntu-contacts0.1 (= ${binary:Version}),
-         qtdeclarative5-ubuntu-content1,
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Qt Ubuntu Address Book  Components - QML plugin
@@ -91,30 +62,3 @@ Description: Qt Ubuntu Address Book  Components - QML plugin
  .
  This package contains the Ubuntu Address Book Components QML plugin.
 
-Package: address-book-app-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends: address-book-app (= ${binary:Version}),
-         ${misc:Depends},
-Description: debugging symbols for address-book-app
- Address Book application to manager contacts.
- .
- This package contains the debugging symbols for address-book-app
-
-Package: address-book-app-autopilot
-Architecture: all
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         python3-autopilot,
-         libautopilot-qt,
-         libqt5test5,
-         libqt5widgets5,
-         ofono-phonesim-autostart,
-         python-testscenarios,
-         qml-module-ubuntu-components (>= 0.1.49+14.10.20140707) | qml-module-ubuntu-components-gles,
-         ubuntu-ui-toolkit-autopilot (>= 0.1.46+14.10.20140527),
-         address-book-app (>= ${binary:Version}),
-         ubuntu-mobile-icons,
-Description: Test package for address-book-app
- Autopilot tests for the address-book-app package
