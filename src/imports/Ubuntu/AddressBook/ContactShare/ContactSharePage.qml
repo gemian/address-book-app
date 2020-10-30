@@ -18,7 +18,7 @@ import QtQuick 2.4
 import QtContacts 5.0
 
 import Ubuntu.Components 1.3
-import Ubuntu.Content 1.3 as ContentHub
+// import Ubuntu.Content 1.3 as ContentHub
 
 import Ubuntu.AddressBook.Base 0.1
 
@@ -33,7 +33,7 @@ Page {
 
     // invisible header
     header: Item { height: 0 }
-    ContentHub.ContentPeerPicker {
+    /* ContentHub.ContentPeerPicker {
         visible: true
         anchors.fill: parent
         contentType: ContentHub.ContentType.Contacts
@@ -56,6 +56,7 @@ Page {
                 root.pageStack.pop()
         }
     }
+    */
 
     ContactExporter {
         id: exporter
