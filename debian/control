@@ -28,6 +28,7 @@ Build-Depends: cmake,
                xvfb,
                lsb-release,
                intltool,
+               python3-distutils,
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/address-book-app
 # If you aren't a member of ~phablet-team but need to upload packaging changes,
