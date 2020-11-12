@@ -27,6 +27,7 @@ Build-Depends: cmake,
                thumbnailer-service,
                xvfb,
                lsb-release,
+               intltool,
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/address-book-app
 # If you aren't a member of ~phablet-team but need to upload packaging changes,
