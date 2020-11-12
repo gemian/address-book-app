@@ -6,7 +6,9 @@ export DPKG_GENSYMBOLS_CHECK_LEVEL=4
 #export DH_VERBOSE=1
 
 %:
-	dh $@ --parallel --with translations
+	dh $@ --parallel
+
+override_dh_auto_test:
 
 #override_dh_auto_install:
 #	dh_auto_install

@@ -1,4 +1,4 @@
-address-book-app (0.4~0gemian) buster; urgency=medium
+address-book-app (0.4+gemian) buster; urgency=medium
 
   * Gemian build
 
